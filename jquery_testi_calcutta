@@ -1,0 +1,12 @@
+$('ul.elenco').each(function(e){
+   if (e < 2) {
+      $(this).find('a').each( function(){
+         $.get($(this).attr('href'), function(data){
+             var testopage = $.parseHTML(data);
+             $(testopage).find('div.testo').each(function(){
+                 console.log($(this).text());
+             });
+         });
+      });
+   }
+});
